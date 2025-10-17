@@ -1,0 +1,38 @@
+.Carousel{
+	margin-top: 10rem;
+}
+
+.Title{
+	font-size: 4.2rem;
+	font-weight: 600;
+	color: var(--p-color);
+}
+
+
+//Advantages 
+
+.List{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 2rem;
+	margin: 8rem 0;
+}
+
+.Item{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	min-width: 150px;
+	gap: 2rem;
+	// max-width: 200px;
+	text-align: center;
+}
+
+.Text{
+	font-size: 1.8rem;
+	font-weight: 500;
+	width: 80%;
+}

@@ -1,0 +1,33 @@
+.Product {
+	display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+
+  @media (max-width: 590px) {
+    margin-bottom: 16px;
+  }
+}
+
+.Stock {
+	margin-right: 16px;
+  padding-left: 8px;
+  font-size: 12px;
+  background-repeat: no-repeat;
+  background-position: left center;
+
+	&__green {
+		color: #26DA72;
+		background-image: url('/img/green-ellipse.svg');
+	}
+
+	&__red {
+		color: #FF4747;
+		background-image: url('/img/red-ellipse.svg');
+	}
+
+}
+
+.Code {
+	color: #A5A8AD;
+	font-size: 12px;
+}

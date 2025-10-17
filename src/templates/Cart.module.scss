@@ -1,0 +1,65 @@
+.Container{
+padding-top: 2rem;
+}
+
+.Cart{
+	min-height: 555px;
+  padding-bottom: 40px;
+}
+
+.CartInner{
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-column-gap: 32px;
+	margin-bottom: 40px;
+
+	@media (max-width: 930px) {
+		display: block;
+		margin-bottom: 0;
+	}
+}
+
+.CartLeft{
+	min-height: 605px;
+  grid-column: 1 / 9;
+
+    @media (max-width: 930px) {
+      margin-bottom: 24px;
+      min-height: auto;
+    }
+}
+
+.CartRight{
+	grid-column: 9 / 13;
+    min-width: 352px;
+
+    @media (max-width: 930px) {
+      display: flex;
+    }
+
+    @media (max-width: 740px) {
+      display: block;
+    }
+
+    @media (max-width: 430px) {
+      min-width: auto;
+    }
+}
+
+.CartOrder{
+	padding: 24px;
+	height: max-content;
+	background-color: #222;
+	position: sticky;
+	top: 20px;
+	box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.20), 0px 0px 20px 0px rgba(0, 0, 0, 0.10);
+
+	@media (max-width: 930px) {
+		min-width: 352px;
+	}
+
+	@media (max-width: 430px) {
+		min-width: auto;
+		padding: 16px;
+	}
+}

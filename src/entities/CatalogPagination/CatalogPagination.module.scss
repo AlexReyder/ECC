@@ -1,0 +1,130 @@
+.ContainerClassName{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
+  @media (max-width: 800px) {
+     min-width: max-content;
+   }
+}
+
+.PageClassName{
+	border-radius: 32px;
+	overflow: hidden;
+
+	&:not(:last-child) {
+		margin-right: 12px;
+	}
+}
+.PageLinkClassName{
+  text-decoration: none;
+   display: block;
+   display: flex;
+   width: 58px;
+   height: 48px;
+   align-items: center;
+   padding: 12px 24px;
+  justify-content: center;
+   cursor: pointer;
+   color: #222;
+   transition: background-color .2s ease-in-out;
+
+  &:hover {
+    background-color: #222;
+    color: #fff;
+    transition: background-color .2s ease-in-out;
+   }
+}
+
+.Botton{
+  overflow-x: auto;
+}
+
+.BottomList{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  &__prev,
+  &__next {
+    @media (max-width: 1220px) {
+      display: none;
+    }
+
+    a {
+      position: relative;
+      color: var(--p-color);
+      text-decoration: none;
+      transition: color .2s ease-in-out;
+      cursor: pointer;
+
+      &::before {
+        background-color: var(--p-color);
+        content: '';
+        height: 100%;
+        width: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transition: background-color .2s ease-in-out;
+        -webkit-mask: url(/img/arrow-right.svg) no-repeat 100% 50%;
+        mask: url(/img/arrow-right.svg) no-repeat 100% 50%;
+      }
+
+      &:hover {
+        color: var(--t-color);
+        transition: color .2s ease-in-out;
+      }
+
+      &:hover::before {
+        background-color: var(--t-color);
+        transition: background-color .2s ease-in-out;
+      }
+    }
+  }
+
+  &__prev {
+    margin-right: 12px;
+
+    a {
+      padding-left: 30px;
+
+      &::before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__next {
+    a {
+      padding-right: 30px;
+    }
+  }
+}
+
+.Break {
+  cursor: pointer;
+  margin: 0 8px;
+  padding: 0 8px;
+  height: 8px;
+  border-right: 1px solid #9466FF;
+  border-left: 1px solid #9466FF;
+
+  &__link {
+    display: block;
+    height: 8px;
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E8E9EA;
+    text-decoration: none;
+  }
+}
+
+.Active{
+  background-color: var(--t-color);
+  & > a {
+    color: #fff;
+  }
+}

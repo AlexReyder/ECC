@@ -1,0 +1,159 @@
+.Item{
+	min-height: 453px;
+	position: relative;
+	padding-bottom: 16px;
+	border-radius:16px;
+	transition: background-color .2s ease-in-out, box-shadow .2s ease-in-out;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+
+	&:hover {
+		box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.20), 0px 0px 20px 0px rgba(0, 0, 0, 0.10);
+		transition: background-color .2s ease-in-out, box-shadow .2s ease-in-out;
+	}
+
+	&:hover .Actions, &:hover .Cart {
+		opacity: 1;
+		visibility: visible;
+		transition: background-color .2s ease-in-out, opacity .2s ease-in-out, visibility .2s ease-in-out;
+	}
+
+
+	@media (max-width: 590px) {
+		padding-bottom: 75px;
+		min-height: 490px;
+	}
+}
+
+.Label {
+	position: absolute;
+	top: 16px;
+	left: 16px;
+	color: #FFF;
+	font-size: 14px;
+	font-weight: 500;
+	padding: 0 8px;
+	z-index: 1;
+}
+
+
+.New {
+	background-color: #FF5E2D;
+}
+
+.Bestseller {
+	background-color: var(--hit-color);
+}
+
+.Img {
+	display: block;
+	width: 100%;
+	height: 320px;
+	max-height: 320px;
+	position: relative;
+	&:hover > .Cart {
+		opacity: 1;
+		visibility: visible;
+		transition: background-color .2s ease-in-out, opacity .2s ease-in-out, visibility .2s ease-in-out;
+	}
+	& > img{
+		border-radius: 16px;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+}
+.Inner {
+	align-self: flex-start;
+	padding: 0 16px;
+}
+
+.Title {
+	margin: 0;
+	margin-bottom: 4px;
+
+	a {
+		color: var(--p-color);
+		font-size: 1.6rem;
+		font-weight: 700;
+		text-decoration: none;
+	}
+}
+
+.PriceBlock{
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: start;
+	gap: 0.5rem;
+	@media (max-width: 590px) {
+		flex-direction: row;
+		align-items: center;
+		gap: 1.5rem;
+	}
+}
+
+.Price {
+	color: var(--price-color);
+	font-size: 2.4rem;
+	font-weight: 500;
+}
+
+.Adprice{
+	color: var(--g-color-1);
+	font-size: 1.8rem;
+	font-weight: 500;
+	text-decoration: line-through;
+	position: relative;
+	left: 3rem;
+	@media (max-width: 590px) {
+		font-size: 2.4rem;
+		left: 0;
+	}
+}
+
+.Cart {
+	border:none;
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	bottom: 16px;
+	right: 16px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 500;
+	border-radius: 32px;
+	background-color: var(--cart-color);
+	padding: 12px 24px !important;
+	transition: background-color .2s ease-in-out, opacity .2s ease-in-out, visibility .2s ease-in-out;
+	cursor: pointer;
+
+	@media (max-width: 800px) {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	@media (max-width: 590px) {
+		left: 16px;
+	}
+
+	&:hover {
+		background-color: var(--t-color-2);
+		transition: background-color .2s ease-in-out;
+	}
+
+	&_added {
+		opacity: 1;
+		visibility: visible;
+		background-color: #16D9A6 !important;
+		pointer-events: none !important;
+		cursor: none !important;
+
+		&:hover {
+			background-color: #16D9A6;
+		}
+	}
+	&__in{
+			background-color: var(--price-color);
+		}
+}

@@ -1,0 +1,81 @@
+.Footer {
+	background-color: var(--p-color);
+	padding: 3rem 0;
+}
+
+.Prefooter {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	justify-items: center;
+	align-items: flex-start;
+
+	@media only screen and (max-width: 56.25rem) {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		gap: 4rem;
+	}
+}
+
+.Logo {
+	@media only screen and (max-width: 30rem) {
+		height: 50px;
+	}
+	@media only screen and (max-width: 21.875rem) {
+		height: 35px;
+		width: 100%;
+	}
+}
+.Heading {
+	margin-bottom: 2rem;
+}
+.Item {
+	margin-bottom: 1rem;
+}
+
+.General {
+}
+
+.Navigation {
+}
+
+.Projects {
+}
+
+.Contacts {
+}
+
+.Messangers {
+	display: flex;
+	gap: 1rem;
+	margin-top: 1rem;
+
+	@media only screen and (max-width: 34rem) {
+		justify-content: center;
+	}
+}
+
+.Container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 7rem;
+	background-color: var(--color-secondary);
+	border-top: 3px solid var(--color-primary);
+	border-bottom: 3px solid var(--color-primary);
+
+	@media only screen and (max-width: 40rem) {
+		flex-direction: column;
+		justify-content: center;
+		gap: 1.5rem;
+		height: fit-content;
+		padding: 2rem 0;
+	}
+}
+
+.Copyright {
+	font-size: 1.4rem;
+	text-align: center;
+	margin-top: 2rem;
+	padding-bottom: 1rem;
+}

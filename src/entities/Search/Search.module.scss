@@ -1,0 +1,123 @@
+.Container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  height: 100%;
+  position: relative;
+}
+
+.Search{
+  display: block;
+	background-color: var(--s-color);
+	width: 360px;
+  max-width: 400px;
+	height: 40px;
+  border: none;
+	border-radius: 24px;
+  padding-left: 2rem;
+  font-size: 1.6rem;
+  color: var(--p-color);
+  &::placeholder{
+    font-weight: 500;
+    color: var(--g-color-1);
+  }
+
+  &::-webkit-search-cancel-button{
+    display: none;
+  }
+    
+  &:focus{
+    outline: none;
+  }
+  @media only screen and (max-width: 40.625rem) {
+	  display: none;
+	}
+}
+
+
+
+.Button {
+	border: none;
+	background-color: var(--s-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 27px;
+  display: block;
+  position: absolute;
+	top: 50%;
+  right: 0;
+  transform: translate(0,-50%);
+  cursor: pointer;
+  @media only screen and (max-width: 40.625rem) {
+	  position: absolute;
+    background-color: var(--p-color);
+	}
+}
+
+.Button::before {
+  background-color: #222;
+  content: '';
+  height: 100%;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: background-color 0.2s ease-in-out;
+
+}
+.Button::before {
+  -webkit-mask: url(/img/search.svg) no-repeat 50% 50%;
+  mask: url(/img/search.svg) no-repeat 50% 50%;
+  @media only screen and (max-width: 40.625rem) {
+    background-color: var(--s-color);
+    mask-size: 28px 28px;
+  }
+}
+
+.Popover{
+  display: none;
+  position: absolute;
+  top: 6rem;
+  right: -1rem;
+  width: 250px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 24px;
+  z-index: 5;
+   @media only screen and (max-width: 37.5rem) {
+	  right:50%;
+	  transform:translateX(50%);
+	}
+
+}
+.Open{
+  display: block;
+  @media only screen and (min-width: 40.625rem) {
+	  display: none;
+	}
+}
+
+.SearchMobile{
+  display: block;
+	background-color: var(--s-color);
+	width: 360px;
+  max-width: 250px;
+	height: 40px;
+  border: 3px solid var(--g-color-1);
+	border-radius: 24px;
+  padding-left: 2rem;
+  font-size: 1.6rem;
+  color: var(--p-color);
+  &::placeholder{
+    font-weight: 500;
+    color: var(--g-color-1);
+  }
+
+  &::-webkit-search-cancel-button{
+    display: none;
+  }
+    
+  &:focus{
+    outline: none;
+  }
+}

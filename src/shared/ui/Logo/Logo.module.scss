@@ -1,0 +1,16 @@
+.Logo{
+	display: block;
+	width: 227px;
+	height: 70px;
+	position: relative;
+	margin-left: 3rem;
+	grid-column: 1/end;
+	justify-self: center;
+	@media only screen and (min-width: 61rem) {
+		grid-column: 1/2;
+	}
+	@media only screen and (max-width: 25rem) {
+		width: 200px;
+		height: 40px;
+	}
+}

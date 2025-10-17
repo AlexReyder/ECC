@@ -1,0 +1,33 @@
+.Table{
+	width: 100%;
+}
+
+.Item{
+	& > td{
+		padding: 1rem;
+		border-bottom: 1px solid var(--g-color-1);
+	}
+}
+
+.ItemTitle{
+	font-size: 1.6rem;
+	font-weight: 500;
+	color: var(--p-color);
+}
+
+.ItemValue{
+	font-size: 1.6rem;
+	font-weight: 400;
+	color: var(--p-color);
+}
+
+.Heading3{
+	display: block;
+	font-size: 1.8rem;
+	font-weight: 500;
+	color: var(--p-color);
+	margin-bottom: 1.5rem;
+}
+.DescriptionContainer{
+	margin: 4rem 0;
+}

@@ -1,0 +1,365 @@
+:root{
+  --p-color:#222222;
+  --s-color:#ffffff;
+  --t-color: #40c71e;
+  /* --t-color: #055a20; */
+  --t-color-2: #3ab31b;
+  /* --t-color-2: #034719; */
+  --hit-color: #69ed39;
+  --cart-color: #40c71e;
+  --price-color:#f83b3be9;
+  --w-color-1:#8d0c0c;
+  --w-color-2:#710505;
+
+  --g-color-1:#a5a8ad;
+  --g-color-2: #8f8f8f;
+	--g-color-3: #9ca3af;
+}
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+
+  @media (max-width: 75em) {
+		font-size: 56.25%;
+	}
+
+	@media (max-width: 56.25em) {
+		font-size: 50%;
+	}
+
+	@media (min-width: 112.5em) {
+		font-size: 75%;
+	}
+}
+
+body {
+  font-family: "Manrope";
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #ffffff;
+  color: #222222;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--g-color-1);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: var(--t-color-2);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1535px;
+  margin: 0 auto;
+  /* padding: 0 15px; */
+}
+
+.btn-reset {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.slick-slide {
+  margin: 0 9px;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.duration {
+  transition-duration: 2s;
+}
+
+.site-title {
+  margin: 0;
+  margin-bottom: 40px;
+  color: var(--p-color);
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.header__search-overlay,
+.quick-view-modal-overlay,
+.size-table-overlay,
+.auth-overlay,
+.share-overlay {
+  background: #16181b;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: -1;
+}
+
+.header__search-overlay.overlay-active,
+.quick-view-modal-overlay.overlay-active,
+.size-table-overlay.overlay-active,
+.auth-overlay.overlay-active,
+.share-overlay.overlay-active {
+  opacity: 0.6;
+  visibility: visible;
+}
+
+.header__search-overlay.overlay-active {
+  z-index: 101;
+}
+
+.share-overlay.overlay-active {
+  z-index: 101;
+}
+
+.quick-view-modal-overlay.overlay-active {
+  z-index: 5;
+}
+
+.auth-overlay.overlay-active, .size-table-overlay.overlay-active {
+  z-index: 100;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.swiper-slide-shadow-coverflow {
+  background-image: none !important;
+}
+
+.swiper-slide-active .hero-slide-plus {
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #70F;
+  left: 125px;
+  top: 45%;
+  background-image: url('/img/plus-big.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 1;
+}
+
+.swiper-slide-active .hero-slide-plus::after {
+  content: '';
+  position: absolute;
+  width: 45px;
+  border-radius: 50%;
+  height: 45px;
+  border: 2px solid #70F;
+  left: -5px;
+  top: -5px;
+}
+
+.sizes-table-btn {
+  color: #16D9A6;
+  font-size: 14px;
+  text-decoration-line: underline;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.06);
+  min-height: 45px;
+}
+
+.counter button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.counter button {
+  position: relative;
+  height: 22px;
+  width: 24px;
+}
+
+.counter button::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.counter button:first-child:before {
+  -webkit-mask: url(/img/minus.svg) no-repeat 50% 50%;
+  mask: url(/img/minus.svg) no-repeat 50% 50%;
+}
+
+.counter button:last-child:before {
+  -webkit-mask: url(/img/plus.svg) no-repeat 50% 50%;
+  mask: url(/img/plus.svg) no-repeat 50% 50%;
+}
+
+.counter button:hover::before {
+  transition: background-color 0.2s ease-in-out;
+  background-color: #9466FF;
+}
+
+.counter span {
+  color: rgba(255, 255, 255, 0.90);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.not-empty {
+  content: '';
+  position: absolute;
+  top: 9px;
+  right: 2px;
+  width: 8px;
+  height: 8px;
+  background-color: #FF0C0C;
+  border-radius: 50%;
+}
+
+.not-empty-mobile {
+  top: 12px;
+  right: 15px;
+}
+
+.not-empty-mobile-favorite {
+  top: 12px;
+  right: 25px;
+}
+
+.quick-modal-dots li.slick-active button {
+  background-image: url(/img/white-ellipse.svg) !important;
+}
+
+@media (max-width: 1460px) {
+  .swiper-slide-active .hero-slide-plus {
+    left: 105px;
+  }
+}
+
+@media (max-width: 990px) {
+  .swiper-slide-active .hero-slide-plus {
+    left: 75px;
+  }
+}
+
+@media (max-width: 760px) {
+  .swiper-slide-active .hero-slide-plus {
+    top: 6%;
+    left: 195px;
+  }
+}
+
+.swiper-slide-active .slide-popup {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Rostelecom Basis;
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/Rostelecom-Basis-Bold.woff') format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Rostelecom Basis;
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/Rostelecom-Basis-Medium.woff') format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Rostelecom Basis;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/Rostelecom-Basis-Regular.woff') format("woff");
+}
+
+.overflow-hidden {
+  overflow-y: hidden;
+  padding-right: 8px;
+}
+
+.catalog-pagination-prev.disabled, .catalog-pagination-next.disabled {
+  display: none;
+}
+
+.catalog-pagination-item.selected {
+  background-color: var(--t-color);
+}
+
+.catalog-pagination-item.selected a {
+  color:#fff;
+}
+
+.catalog-pagination-item:hover.selected a {
+  background-color: var(--t-color)
+}
+

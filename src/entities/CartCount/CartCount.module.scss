@@ -1,0 +1,64 @@
+.Container{
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+.CartCount {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--s-color);
+	width: 100%;
+	min-width: 5rem;
+	height: 24px;
+	position: relative;
+	// margin-right:3rem;
+}
+
+.CartCount::before {
+	background-color: var(--s-color);
+	content: '';
+	height: 36px;
+	width: 36px;
+	transition: background-color 0.2s ease-in-out;
+}
+
+.CartCount:hover::before {
+	transition: background-color 0.2s ease-in-out;
+	background-color: var(--t-color)
+}
+
+.CartCount:hover {
+	transition: color 0.2s ease-in-out;
+	color: var(--t-color)
+}
+
+
+.CartCount::before {
+	-webkit-mask: url(/img/cart.svg) no-repeat 50% 50%;
+	mask: url(/img/cart.svg) no-repeat 50% 50%;
+	mask-size: 28px 28px;
+}
+
+.Counter{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 11px;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background-color: red;
+	color: var(--s-color);
+	position:absolute;
+	top: -14px;
+	right: -2px;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s;
+}
+
+.CounterVisible{
+	visibility: visible;
+	opacity: 1;
+}

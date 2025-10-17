@@ -1,0 +1,84 @@
+.FormContainer{
+	background-color: #fff;
+	padding: 16px;
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.FormSubmit{
+  background-color: var(--t-color);
+  padding: 1.5rem 2.5rem;
+  min-width: 200px;
+  color:#fff;
+  border-radius: 24px;
+  border: none;
+  transition: all 0.3s;
+  &:hover{
+    background-color: var(--t-color-2);
+  }
+}
+
+.FormTitle{
+  margin: 0;
+  color: #222;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 30px;
+  @media (max-width: 37.5rem) {
+    font-size: 24px;
+		text-align: center;
+		margin-bottom: 4px;
+	}
+}
+.FormDescription{
+  font-weight: 500;
+  margin: 0;
+  color: #6c757d;
+  margin-bottom: 16px;
+  @media (max-width: 37.5rem) {
+		text-align: center;
+	}
+}
+
+.FormFooter{
+	display: flex;
+	flex-direction: column;
+  align-items: center;
+  justify-content: center;
+	margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+.Error{
+  color: red;
+  font-size:1.5rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.Success{
+  color: var(--t-color);
+  font-size:1.5rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.ChecboxContainer{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.Checkbox{
+  accent-color: var(--p-color);
+}
+
+.CheckboxText{
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--p-color);
+}

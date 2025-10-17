@@ -1,0 +1,120 @@
+.FormRadio{
+	&:not(:last-child){
+		margin-bottom: 1rem;
+	}
+}
+
+.Radio {
+	margin: 0;
+	position: relative;
+	padding-left: 36px;
+
+	&:not(:last-child) {
+		margin-bottom: 16px;
+	}
+
+	label {
+		background-repeat: no-repeat;
+	}
+	label.no_bg {
+		background-image: none;
+	}
+}
+
+.Label {
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 1.5rem;
+	width: max-content;
+	min-width: 314px;
+	cursor: pointer;
+	padding: 4px 24px;
+	padding-left: 23px;
+	height: 48px;
+	border-radius: 24px;
+	border: 2px solid var(--g-color-1);
+	font-size: 1.8rem;
+	font-weight: 400;
+	transition: all 0.3s;
+
+	@media (max-width: 400px) {
+		min-width: 180px;
+		width: auto;
+		font-size: 14px;
+	}
+
+	&.no_bg {
+		background-image: none;
+		padding-left: 24px;
+	}
+
+	&__info {
+		margin-left: -48px;
+		color: rgba(255, 255, 255, 0.40);
+		font-size: 12px;
+		line-height: 16px;
+	}
+}
+
+.Input:disabled + .Label{
+	background-color: var(--g-color-1);
+}
+
+.Input:disabled:checked+label:before{
+	background-color: var(--g-color-1);
+	border-color: var(--g-color-1);
+}
+
+.Input:checked,
+.Input:not(:checked) {
+	position: absolute;
+	left: -9999px;
+}
+
+.Input:checked+label:before,
+.Input:not(:checked)+label:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 12px;
+	width: 24px;
+	height: 24px;
+	border: 2px solid white;
+	opacity: 0.25;
+	border-radius: 100%;
+	background-color: transparent;
+}
+
+.Input:checked+label:after,
+.Input:not(:checked)+label:after {
+	content: '';
+	width: 10px;
+	height: 10px;
+	background: #fff;
+	position: absolute;
+	top: 20px;
+	left: 8px;
+	border-radius: 100%;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.Input:checked+label:before {
+	background-color: var(--t-color);
+	opacity: 1;
+	border-color: var(--t-color);
+}
+
+.Input:not(:checked)+label:after {
+	opacity: 0;
+	-webkit-transform: scale(0);
+	transform: scale(0);
+}
+
+.Input:checked+label:after {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}

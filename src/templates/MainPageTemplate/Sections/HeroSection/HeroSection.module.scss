@@ -1,0 +1,46 @@
+
+.embla {
+  overflow: hidden;
+	// padding: 8rem 0;
+	position: relative;
+}
+
+.viewport{
+
+}
+
+.embla__container {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	// gap:2rem;
+}
+
+.Slide{
+	flex: 0 0 100%;
+	width: 100%;	
+	height: 30vh;
+	position: relative;
+}
+
+.SlideWrapper{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	& > img{
+		@media only screen and (max-width: 37.5rem) {
+			object-fit: scale-down !important;
+		}
+	}
+}
+
+.Link{
+	position: absolute;
+	top: 0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+
+

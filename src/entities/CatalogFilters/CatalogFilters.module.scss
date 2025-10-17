@@ -1,0 +1,137 @@
+$light-grey: #eee;
+$med-grey: #666;
+$dark-grey: #444;
+$highlight-color: #1abc9c;
+$timing: .4s;
+$ease: cubic-bezier(0.865, 0.140, 0.095, 0.870);
+
+.Filters{
+	position: relative;
+}
+
+.Accordion{
+	min-width: 250px;
+	width: 100%;
+}
+
+.AccordionLabel {
+	position: relative;
+	display: block;
+	padding: 1rem;
+
+	border-bottom: 1px solid rgba(#000,.15);
+	box-shadow: inset 0 2px 0 #fff;
+	font-size: 1.6rem;
+	font-weight: 500;
+	text-shadow: 0 1px 0 rgba(#fff,.75);
+	color: #222;
+	cursor: pointer;
+	transition: all $timing $ease;
+	
+	&:after {
+		content: '';
+		background-color: var(--p-color);
+		display: block;
+		width: 24px;
+		height: 24px;
+		position: absolute;
+		right: 0;
+		top: 12px;
+		-webkit-mask: url(/img/close-small.svg) no-repeat 50% 50%;
+		mask: url(/img/close-small.svg) no-repeat 50% 50%;
+		transition: background-color .2s ease-in-out, transform .2s ease-in-out;
+		background-position: center center;
+		transform: rotate(45deg);    
+	}
+}
+
+.AccordionInput {
+	display: none;
+}
+
+.AccordionInput:checked + .AccordionLabel {
+
+	
+	&:after {
+		   transition: background-color .2s ease-in-out, transform .2s ease-in-out;
+          transform: rotate(0);
+	}
+	
+}
+
+input[name='panel']:checked ~ .AccordionContent{
+  height:100%;
+}
+
+.AccordionContent {
+	overflow: hidden;
+	height: 0px;
+	position: relative;
+	margin: 2rem 1.5rem;
+	transition: height $timing $ease;
+}
+
+.FilterContainer{
+	display: flex;
+	align-items: center;
+	gap:0.5rem
+}
+
+.FilterText{
+	cursor: pointer;
+  position: relative;
+	font-size: 1.7rem;
+	font-weight: 500;
+	color: var(--p-color);
+}
+
+.FilterInput{
+	accent-color: var(--p-color);
+}
+
+.OpenBtn{
+	display: block;
+	width: 100%;
+	max-width: 200px;
+	text-align: center;
+	border-radius: 24px;
+	border: none;
+	background-color: var(--t-color);
+	padding: 1.5rem 3rem;
+	font-size: 1.8rem;
+	font-weight: 500;
+	color: #fff;
+	text-transform: uppercase;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	cursor: pointer;
+	margin-bottom: 2rem;
+	// display: none;
+	@media only screen and (min-width: 56.25rem) {
+		display: none;
+	}
+}
+.Box{
+	height: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s;
+	margin-top: 4rem;
+		@media only screen and (min-width: 56.25rem) {
+			height: 100%;
+			opacity: 1;
+			visibility: visible;
+	}
+}
+
+.OpenCatalogFilters{
+	display: none;
+}
+
+.OpenCatalogFilters:checked ~ .Box {
+	height:100%;
+	opacity: 1;
+	visibility: visible;
+}
+

@@ -1,0 +1,42 @@
+.Container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+}
+
+.Wrapper{
+	text-align: center;
+}
+
+.Icon{
+	width: 4.8rem;
+	height: 4.8rem;
+}
+
+.Title{
+	font-size: 2.4rem;
+	font-weight: 500;
+	color: var(--p-color);
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+}
+
+.Description{
+	font-size: 1.6rem;
+	font-weight: 400;
+	color: var(--g-color-1);
+	margin-bottom: 4rem;
+}
+
+.Link{
+	border-radius: 8px;
+	color: var(--s-color);
+	padding: 1.5rem 3rem;
+	background-color: var(--t-color);
+	transition: background-color 0.3s;
+	&:hover{
+		background-color: var(--t-color-2);
+	}
+}

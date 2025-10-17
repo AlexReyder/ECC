@@ -1,0 +1,50 @@
+.Nav{
+	height: 60px;
+	grid-column: 1 / 2;
+	align-self: end;
+	display: flex;
+	align-items: center;
+	width: min-content;
+	padding-left: 3rem;
+	@media only screen and (min-width: 61rem) {
+		padding-left: 0;
+		height: 40px;
+		display: block;
+		width: 100%;
+		grid-column: 1 / end;
+		background-color: #353535;
+	}
+}
+
+.MenuLinks{
+	width: 100%;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.MenuItem{
+	height: 40px;
+	padding: 1rem;
+	position: relative;
+	display: none;
+	@media only screen and (min-width: 61rem) {
+		display: block;
+	}
+	&:hover {
+			background-color: var(--t-color);
+	}
+}
+
+.MenuLink {
+	// position: absolute;
+	// top: 0;
+	// left: 0;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	text-transform: uppercase;
+	color: var(--s-color);
+}

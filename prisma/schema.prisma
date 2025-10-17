@@ -1,0 +1,108 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearchPostgres"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+enum Gender {
+  MAN
+  WOMEN
+}
+
+
+model User {
+  id              String           @id @default(uuid())
+  email           String           @unique
+  name            String?
+  surname         String?
+  phone           String           @unique
+  password        String
+  role            Role             @default(USER)
+  emailVerified   Boolean          @default(false) @map("email_verified")
+  emailToken      String           @default(uuid()) @map("email_token")
+  recoveryToken   String           @default(uuid()) @map("recovery_token")
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  Cart            Cart[]
+}
+
+model Category {
+  id        String         @id @default(uuid())
+  name      String
+  slug      String
+  gender	Gender		   @default(MAN)
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  product   ShoppingCard[]
+}
+
+model Sizes {
+  id        String   @id @default(uuid())
+  name      String
+  slug      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Colors {
+  id        String   @id @default(uuid())
+  name      String
+  slug      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Material {
+  id           String         @id @default(uuid())
+  name         String
+  slug         String
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+}
+
+model ShoppingCard {
+  id                 String         @id @default(uuid())
+  name               String         @unique
+  slug               String
+  isActive           Boolean        @default(true) @map("is_active")
+  isNew              Boolean        @default(false) @map("is_new")
+  isBestseller       Boolean        @default(false) @map("is_bestseller")
+  isInStock          Boolean        @map("is_in_stock")
+  articleNumber      String         @unique @map("article_number")
+  description        String?
+  adPrice            Int
+  price              Json
+  category           Json[]
+  categoryFilter     String[]
+  colors             Json[]
+  colorsFilter       String[]
+  sizes              Json[]
+  sizesFilter        String[]
+  material           Json[]
+  materialFilter     String[]
+  CategoryTable      Category[]
+  images             Json
+  createdAt          DateTime       @default(now())
+  updatedAt          DateTime       @updatedAt
+
+  @@map("shopping_card")
+}
+
+model Cart {
+  id        String      @id @default(uuid())
+  userId    String
+  user      User        @relation(fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  products  Json
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+}
+

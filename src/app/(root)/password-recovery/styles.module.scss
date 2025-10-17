@@ -1,0 +1,17 @@
+.Container{
+	width: 100%;
+	height: calc(100vh - 120px);
+}
+
+.Wrapper{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.Modal{
+	min-width: 260px;
+	max-width: 720px;
+	width: 100%;
+}
