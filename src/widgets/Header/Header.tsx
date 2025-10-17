@@ -32,8 +32,10 @@ export async function Header() {
               <Profile isAuth={isAuth} username={userName as string} />
             </Suspense>
           </li>
+          <li className={s.HeaderItem}>
+            <Menu items={menuItems} />
+          </li>
         </ul>
-        <Menu items={menuItems} />
       </div>
     </header>
   );

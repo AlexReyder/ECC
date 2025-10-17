@@ -19,13 +19,6 @@ export const MenuMobile = ({ className, items }: MenuProps) => {
       ? items.filter((item) => item.gender === "MAN")
       : [];
   const onToggle = () => {
-    // if (!menu) {
-    // 	document.body.querySelector('#sidebar').classList.add('hideEl')
-    // 	document.body.style.overflow = 'hidden'
-    // } else {
-    // 	document.body.querySelector('#sidebar').classList.remove('hideEl')
-    // 	document.body.style.overflow = ''
-    // }
     toggleMenu(!menu);
   };
 
@@ -42,9 +35,10 @@ export const MenuMobile = ({ className, items }: MenuProps) => {
       <nav className="nav">
         <div className="nav__content">
           <ul className="nav__list">
+            <li className="for">Для женщин:</li>
             {wItems.map((item) => {
               return (
-                <li className="nav__list-item">
+                <li className="nav__list-item" key={item.slug}>
                   <Link href={`/catalog/${item.slug}`} onClick={onToggle}>
                     {item.name}
                   </Link>
@@ -54,9 +48,10 @@ export const MenuMobile = ({ className, items }: MenuProps) => {
           </ul>
 
           <ul className="nav__list">
+            <li className="for">Для мужчин:</li>
             {mItems.map((item) => {
               return (
-                <li className="nav__list-item">
+                <li className="nav__list-item" key={item.slug}>
                   <Link href={`/catalog/${item.slug}`} onClick={onToggle}>
                     {item.name}
                   </Link>

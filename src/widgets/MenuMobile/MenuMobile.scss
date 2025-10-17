@@ -1,8 +1,7 @@
 .navigation{
-	display: none;
-	@media only screen and (max-width: 61rem) {
-		display: block;
-	}
+	display: flex;
+    align-items: center;
+    justify-content:center;
 }
 
 .nav-but-wrap {
@@ -10,6 +9,11 @@
 	display: inline-block;
 	transition: all 0.3s ease-out;
 	z-index: 99;
+}
+
+.nav__content{
+display:flex;
+align-items:flex-start; 
 }
 
 .menu-icon {
@@ -130,8 +134,8 @@
 .nav__content {
 	position: fixed;
 	visibility: hidden;
-	top: 0;
-	left: 0;
+	top: 50px;
+	left: 15px;
 	width: 100vw;
 	height: 100vh;
 	// margin-top: 20px;
@@ -141,7 +145,7 @@
 	// height: 100vh;
 	text-align: center;
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 }
 
 .nav__list {
@@ -505,4 +509,11 @@
 		width: 11px;
 		height: 17.6px;
 	}
+}
+
+.for{
+font-size:1.8rem;
+font-weight:500;
+color:#fff;
+line-height:1;
 }

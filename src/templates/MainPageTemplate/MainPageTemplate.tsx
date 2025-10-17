@@ -22,7 +22,7 @@ export async function MainPageTemplate() {
 			<HeroSection data={banners}/>
 			: null	
 		*/}
-      <CatalogSection />
+      {/*  <CatalogSection /> */}
       {bestsellersData.ok ? (
         <FiltredProductsSection title="Новинки" data={news} />
       ) : null}
@@ -33,4 +33,3 @@ export async function MainPageTemplate() {
     </>
   );
 }
-
