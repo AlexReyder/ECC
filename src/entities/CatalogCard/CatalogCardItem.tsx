@@ -8,12 +8,9 @@ import Link from "next/link";
 import slug from "slug";
 import s from "./CatalogCardItem.module.scss";
 import { useState } from "react";
-import { Modal } from "../Modal/Modal";
-import { SizeTableModal } from "../Modal/SizeTableModal";
 
 export const CatalogCardItem = ({ item }: { item: ProductsDb }) => {
   const [isInCart, setIsInCart] = useState(false);
-  const [isSizeTableOpen, setSizeTableOpen] = useState(false);
   let {
     id,
     name,
@@ -92,13 +89,6 @@ export const CatalogCardItem = ({ item }: { item: ProductsDb }) => {
       >
         {isInCart ? "Оформить" : "В корзину"}
       </button>
-
-      {isSizeTableOpen ? (
-        <SizeTableModal
-          closeModal={setSizeTableOpen}
-          product={item}
-        ></SizeTableModal>
-      ) : null}
     </li>
   );
 };

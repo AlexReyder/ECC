@@ -1,9 +1,5 @@
 "use client";
 
-import {
-  uniqueProductArticleNumber,
-  uniqueProductName,
-} from "@/shared/api/admin/formUnique";
 import { addProduct } from "@/shared/api/admin/products";
 import { Button } from "@/shared/shadcnui/ui/button";
 import {
@@ -300,17 +296,6 @@ const FormTemplateField = ({
 };
 
 const ProductName = (form: { form: any }) => {
-  const [err, setErr] = useState("");
-  const handleUnique = async (e: ChangeEvent<HTMLInputElement>) => {
-    const isUnique = await uniqueProductName(e.target.value);
-    if (!isUnique) {
-      setErr(
-        "Ошибка. Поле должно быть уникальным. Товар с таким названием уже существует.",
-      );
-      return;
-    }
-    setErr("");
-  };
   return (
     <FormField
       //@ts-ignore:next-line
@@ -325,12 +310,8 @@ const ProductName = (form: { form: any }) => {
               className="col-span-4"
               autoComplete="off"
               {...field}
-              onBlur={handleUnique}
             />
           </FormControl>
-          {err ? (
-            <p className="text-red-600 col-span-6 text-sm">{err}</p>
-          ) : null}
           <FormMessage className="col-span-4 col-start-3" />
         </FormItem>
       )}
@@ -362,18 +343,6 @@ const ProductDescription = (form: { form: any }) => {
   );
 };
 const ProductArticle = (form: { form: any }) => {
-  const [err, setErr] = useState("");
-
-  const handleUnique = async (e: ChangeEvent<HTMLInputElement>) => {
-    const isUnique = await uniqueProductArticleNumber(e.target.value);
-    if (!isUnique) {
-      setErr(
-        "Ошибка. Поле должно быть уникальным. Товар с таким артикулом уже существует.",
-      );
-      return;
-    }
-    setErr("");
-  };
   return (
     <FormField
       //@ts-ignore:next-line
@@ -388,12 +357,8 @@ const ProductArticle = (form: { form: any }) => {
               className="col-span-4"
               autoComplete="off"
               {...field}
-              onBlur={handleUnique}
             />
           </FormControl>
-          {err ? (
-            <p className="text-red-600 col-span-6 text-sm">{err}</p>
-          ) : null}
           <FormMessage className="col-span-4 col-start-3" />
         </FormItem>
       )}

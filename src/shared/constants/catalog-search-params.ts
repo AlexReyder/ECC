@@ -1,15 +1,11 @@
-import { createLoader, parseAsInteger, parseAsString } from 'nuqs/server'
- 
+import { createLoader, parseAsInteger, parseAsString } from "nuqs/server";
 
 export const catalogSearchParams = {
-  search:parseAsString,
+  search: parseAsString,
   offset: parseAsInteger.withDefault(1),
-  bands: parseAsString,
-  genres: parseAsString,
-  manufacturers: parseAsString,
   colors: parseAsString,
   sizes: parseAsString,
+};
 
-}
- 
-export const CatalogSearchParams = createLoader(catalogSearchParams)
+export const CatalogSearchParams = createLoader(catalogSearchParams);
+
