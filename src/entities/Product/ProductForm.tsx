@@ -70,20 +70,16 @@ const ProductForm = ({
         quantity: count,
       };
       const cart = await addProductToCart(data);
-      console.log(cart);
-      console.log(data);
       setSizeError("");
       setQauntityError("");
-    } else {
-      console.log("hi");
     }
   }
-
   return (
     <Form action={handleSubmit(onSubmit)}>
       {material ? (
         <ProductFiltersLabel label="Материал" selected={material} />
       ) : null}
+      <ProductFiltersLabel label="Цвет" selected={colors[0]} />
       <ProductSize sizes={sizes} error={sizeError} />
       <div>
         <ProductFiltersLabel label="Количество" selected={`${count}`} />

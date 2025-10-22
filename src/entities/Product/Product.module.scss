@@ -1,4 +1,4 @@
-.ProductTitle{
+.ProductTitle{  
 	margin: 0;
 	color: var(--p-color);
 	font-size: 36px;
@@ -40,12 +40,12 @@
 .ProductAdprice{
 	margin: 0;
 	color: var(--g-color-1);
-	font-size: 32px;
+	font-size: 24px;
 	font-weight: 500;
 	margin-bottom: 0;
 	text-decoration:line-through;
 	@media (max-width: 520px) {
-		font-size: 28px;
+		font-size: 20px;
 	}
 }
 
@@ -104,7 +104,7 @@
 	align-items: center;
 	justify-content: flex-start;
 	flex-wrap: wrap;
-	gap: 2.5rem;
+	gap: 1.5rem;
 	margin-top: 2rem;
 	margin-bottom: 2rem;
 }
@@ -122,7 +122,7 @@
 }
 
 .ProductSelectItem{
-	border-radius: 24px;
+	border-radius: 16px;
 	width: 80px;
 	height: 64px;
 	padding: 1rem 2rem;
@@ -258,6 +258,7 @@
 	grid-template-columns: 992px 1fr;
 	grid-template-rows: 650px 1fr;
 	column-gap: 32px;
+    margin-top:3rem;
 	margin-bottom: 40px;
 	align-items: flex-start;
 
@@ -303,4 +304,38 @@
 	@media (max-width: 920px) {
 		order: 1;
 	}
+}
+
+.Table{
+	width: 100%;
+}
+
+.Item{
+	& > td{
+		padding: 1rem;
+		border-bottom: 1px solid var(--g-color-1);
+	}
+}
+
+.ItemTitle{
+	font-size: 1.6rem;
+	font-weight: 500;
+	color: var(--p-color);
+}
+
+.ItemValue{
+	font-size: 1.6rem;
+	font-weight: 400;
+	color: var(--p-color);
+}
+
+.Heading3{
+	display: block;
+	font-size: 1.8rem;
+	font-weight: 500;
+	color: var(--p-color);
+	margin-bottom: 1.5rem;
+}
+.DescriptionContainer{
+	margin: 4rem 0;
 }

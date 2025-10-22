@@ -16,6 +16,7 @@
 	border-radius: 24px;
   padding-left: 2rem;
   font-size: 1.6rem;
+  border-bottom:1px solid var(--g-border);
   color: var(--p-color);
   &::placeholder{
     font-weight: 500;
@@ -50,7 +51,7 @@
   cursor: pointer;
   @media only screen and (max-width: 40.625rem) {
 	  position: absolute;
-    background-color: var(--p-color);
+   // background-color: var(--p-color);
 	}
 }
 
@@ -69,7 +70,7 @@
   -webkit-mask: url(/img/search.svg) no-repeat 50% 50%;
   mask: url(/img/search.svg) no-repeat 50% 50%;
   @media only screen and (max-width: 40.625rem) {
-    background-color: var(--s-color);
+    background-color: var(--p-color);
     mask-size: 28px 28px;
   }
 }

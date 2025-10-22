@@ -71,6 +71,12 @@ input[name='panel']:checked ~ .AccordionContent{
 	transition: height $timing $ease;
 }
 
+.FilterList{
+display:flex;
+flex-wrap:wrap;
+gap:0.5rem;
+}
+
 .FilterContainer{
 	display: flex;
 	align-items: center;
@@ -78,6 +84,9 @@ input[name='panel']:checked ~ .AccordionContent{
 }
 
 .FilterText{
+  padding: 1rem;
+  border-radius:16px;
+  border:2px solid var(--g-color-1);
 	cursor: pointer;
   position: relative;
 	font-size: 1.7rem;
@@ -85,7 +94,13 @@ input[name='panel']:checked ~ .AccordionContent{
 	color: var(--p-color);
 }
 
+.FilterText__active{
+  border-color: var(--t-color);
+}
+
 .FilterInput{
+    opacity:0;
+    visibility:hidden;
 	accent-color: var(--p-color);
 }
 
@@ -96,11 +111,12 @@ input[name='panel']:checked ~ .AccordionContent{
 	text-align: center;
 	border-radius: 24px;
 	border: none;
-	background-color: var(--t-color);
+	background-color: var(--s-color);
 	padding: 1.5rem 3rem;
 	font-size: 1.8rem;
 	font-weight: 500;
-	color: #fff;
+    border: 2px solid var(--g-color-1);
+	color: var(--p-color);
 	text-transform: uppercase;
 	position: relative;
 	left: 50%;

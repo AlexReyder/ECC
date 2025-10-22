@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  color: var(--s-color);
+  color: var(--p-color);
   width: 100%;
   min-width: 5rem;
   position: relative;
@@ -17,7 +17,7 @@
 }
 
 .Profile::before {
-  background-color: var(--s-color);
+  background-color: var(--p-color);
   content: '';
   height: 36px;
   width: 36px;

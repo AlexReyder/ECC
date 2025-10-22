@@ -1,9 +1,9 @@
 :root{
   --p-color:#222222;
   --s-color:#ffffff;
-  --t-color: #40c71e;
+  --t-color: #eb1b23;
   /* --t-color: #055a20; */
-  --t-color-2: #3ab31b;
+  --t-color-2: #eb1b23;
   /* --t-color-2: #034719; */
   --hit-color: #69ed39;
   --cart-color: #40c71e;
@@ -14,6 +14,7 @@
   --g-color-1:#a5a8ad;
   --g-color-2: #8f8f8f;
 	--g-color-3: #9ca3af;
+	--g-border: hsla(0,0%,91%,.8);
 }
 
 *,

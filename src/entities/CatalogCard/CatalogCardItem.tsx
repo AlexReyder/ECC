@@ -10,7 +10,6 @@ import s from "./CatalogCardItem.module.scss";
 import { useState } from "react";
 
 export const CatalogCardItem = ({ item }: { item: ProductsDb }) => {
-  const [isInCart, setIsInCart] = useState(false);
   let {
     id,
     name,
@@ -33,24 +32,19 @@ export const CatalogCardItem = ({ item }: { item: ProductsDb }) => {
   const isImages = images.length > 0;
   const previewImage = isImages ? images[0].url : "/img/no-image.png";
   const firstPrice = price;
-  console.log(images);
 
   async function onSubmit() {
-    if (isInCart) {
-      setSizeTableOpen(true);
-      return;
-    }
     const data = {
       productId: id,
       name,
-      price: price[sizes[0].label],
+      price,
       color: colors[0].label,
       size: sizes[0].label,
       image: previewImage,
       quantity: 1,
     };
+    console.log(data);
     await addProductToCart(data);
-    setIsInCart(true);
   }
 
   return (
@@ -83,11 +77,8 @@ export const CatalogCardItem = ({ item }: { item: ProductsDb }) => {
         </div>
       </div>
 
-      <button
-        className={` ${s.Cart} ${isInCart ? s.Cart__in : ""}`}
-        onClick={onSubmit}
-      >
-        {isInCart ? "Оформить" : "В корзину"}
+      <button className={` ${s.Cart}`} onClick={onSubmit}>
+        В корзину
       </button>
     </li>
   );

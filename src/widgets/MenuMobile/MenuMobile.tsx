@@ -10,6 +10,7 @@ interface MenuProps {
 
 export const MenuMobile = ({ className, items }: MenuProps) => {
   const [menu, toggleMenu] = useState(false);
+  const [gender, setGender] = useState("women");
   const wItems =
     items && items.length > 0
       ? items.filter((item) => item.gender === "WOMEN")
@@ -34,22 +35,23 @@ export const MenuMobile = ({ className, items }: MenuProps) => {
 
       <nav className="nav">
         <div className="nav__content">
-          <ul className="nav__list">
-            <li className="for">Для женщин:</li>
-            {wItems.map((item) => {
-              return (
-                <li className="nav__list-item" key={item.slug}>
-                  <Link href={`/catalog/${item.slug}`} onClick={onToggle}>
-                    {item.name}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+          <div className="foo__container">
+            <button
+              className={`nav__list-item for ${gender === "women" ? "foo__active" : ""}`}
+              onClick={() => setGender("women")}
+            >
+              Женщинам
+            </button>
 
+            <button
+              className={`nav__list-item for ${gender === "men" ? "foo__active" : ""}`}
+              onClick={() => setGender("men")}
+            >
+              Мужчинам
+            </button>
+          </div>
           <ul className="nav__list">
-            <li className="for">Для мужчин:</li>
-            {mItems.map((item) => {
+            {(gender === "women" ? wItems : mItems).map((item) => {
               return (
                 <li className="nav__list-item" key={item.slug}>
                   <Link href={`/catalog/${item.slug}`} onClick={onToggle}>

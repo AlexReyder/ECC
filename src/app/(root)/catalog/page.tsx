@@ -1,6 +1,5 @@
 import { CatalogFilters } from "@/entities/CatalogFilters/CatalogFilters";
 import { CatalogPagination } from "@/entities/CatalogPagination/CatalogPagination";
-import { Breadcrumbs } from "@/features";
 import { CatalogSearchParams } from "@/shared/constants/catalog-search-params";
 import { HeadingWithCount, Section } from "@/shared/ui";
 import { ErrorPageTemplate } from "@/templates";
@@ -41,7 +40,6 @@ export default async function CatalogPage({ searchParams }: PageProps) {
       {products && products.success ? (
         <>
           <Section>
-            <Breadcrumbs />
             <HeadingWithCount count={products.success.length} title="Каталог" />
           </Section>
           <Section className={s.Container}>

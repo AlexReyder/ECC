@@ -76,7 +76,7 @@ const OrderInfoBlock = ({
           </button>
         ) : (
           <Link
-            href="/order"
+            href="/"
             className={s.Button}
             // ${
             // !isUserAgree || !currentCartByAuth.length ? styles.disabled : ''

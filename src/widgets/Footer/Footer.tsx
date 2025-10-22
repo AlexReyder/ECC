@@ -17,36 +17,45 @@ export const Footer = ({}: FooterProps) => {
       <Section className={cls.Prefooter}>
         <div className={cls.General}>
           <Logo />
-          <Typography variant="text">
+          <Typography variant="text" color="black">
             «Scappa» - dамый большой ассортимент одежды, обуви и аксессуаров для
             мужчин и женщин.
           </Typography>
         </div>
         <div className={cls.Navigation}>
-          <Typography variant="text" size="s24" className={cls.Heading}>
+          <Typography
+            variant="text"
+            size="s24"
+            color="black"
+            className={cls.Heading}
+          >
             О компании
           </Typography>
           <ul>
             <li className={cls.Item}>
               <Link href="/">
-                <Typography variant="text">Главная</Typography>
+                <Typography variant="text" color="black">
+                  Главная
+                </Typography>
               </Link>
             </li>
             <li className={cls.Item}>
               <Link href="/catalog">
-                <Typography variant="text">Каталог</Typography>
+                <Typography variant="text" color="black">
+                  Каталог
+                </Typography>
               </Link>
             </li>
             <li className={cls.Item}>
               <Link href="/agreement">
-                <Typography variant="text">
+                <Typography variant="text" color="black">
                   Пользовательское соглашение
                 </Typography>
               </Link>
             </li>
             <li className={cls.Item}>
               <Link href="/policy">
-                <Typography variant="text">
+                <Typography variant="text" color="black">
                   Политика конфиденциальности
                 </Typography>
               </Link>
@@ -54,19 +63,28 @@ export const Footer = ({}: FooterProps) => {
           </ul>
         </div>
         <div className={cls.Contacts}>
-          <Typography variant="text" size="s24" className={cls.Heading}>
+          <Typography
+            variant="text"
+            size="s24"
+            color="black"
+            className={cls.Heading}
+          >
             Свяжитесь с нами
           </Typography>
           <ul>
             <li className={cls.Item}>
               <Link href="tel:+799999999">
-                <Typography variant="text">+7 (999) 999 99 99</Typography>
+                <Typography variant="text" color="black">
+                  +7 (999) 999 99 99
+                </Typography>
               </Link>
             </li>
 
             <li className={cls.Item}>
               <Link href="mailto:sappa@sappa.ru">
-                <Typography variant="text">sappa@sappa.ru</Typography>
+                <Typography variant="text" color="black">
+                  sappa@sappa.ru
+                </Typography>
               </Link>
             </li>
           </ul>

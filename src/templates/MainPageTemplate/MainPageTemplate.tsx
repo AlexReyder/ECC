@@ -4,9 +4,6 @@ import { FiltredProductsSection } from "./Sections/FiltredProductsSection/Filtre
 import { HeroSection } from "./Sections/HeroSection/HeroSection";
 
 export async function MainPageTemplate() {
-  //const bannersData = await fetch(`${process.env.SITE_DOMAIN}/api/hero/getBanners`)
-  //const banners = await bannersData.json()
-
   const bestsellersData = await fetch(
     `${process.env.SITE_DOMAIN}/api/hero/getBestsellers`,
   );
@@ -17,12 +14,7 @@ export async function MainPageTemplate() {
 
   return (
     <>
-      {/*
-			bannersData.ok ? 
-			<HeroSection data={banners}/>
-			: null	
-		*/}
-      {/*  <CatalogSection /> */}
+      <HeroSection />
       {bestsellersData.ok ? (
         <FiltredProductsSection title="Новинки" data={news} />
       ) : null}
